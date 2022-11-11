@@ -1,11 +1,11 @@
-import { StateObject } from "@hyper-hyper-space/react";
+import { ObjectState } from "@hyper-hyper-space/react";
 import { Dispatch, SetStateAction } from "react";
 import { HHSTodoList } from "../types/HHSTodo";
 import { TodoItem } from "../types/Todo";
 
 interface Props {
     todo: TodoItem;
-    todoList: StateObject<HHSTodoList>;
+    todoList?: ObjectState<HHSTodoList>;
 }
 
 export function TodoListItem({ todo, todoList }: Props) {
@@ -27,7 +27,7 @@ export function TodoListItem({ todo, todoList }: Props) {
                     checked={todo.isCompleted}
                     className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
                     onClick={() => {
-                        todoList.getValue()?.items.setValue(
+                        todoList?.getValue()?.items.setValue(
                             todos.map((todo) => {
                                 if (todo.id === id) {
                                     return { ...todo, isCompleted: !todo.isCompleted };

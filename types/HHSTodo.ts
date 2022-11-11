@@ -19,6 +19,9 @@ export class HHSTodoList extends HashedObject implements SpaceEntryPoint {
 
         this.items = new MutableReference();
     }
+    getName(): string | MutableReference<string> | undefined {
+        throw new Error("Method not implemented.");
+    }
 
     init(): void {
         return;
