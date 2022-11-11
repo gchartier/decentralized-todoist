@@ -1,5 +1,5 @@
 export type TodoItem = {
-    id: number;
+    id: string;
     title: string;
     description?: string;
     isCompleted: boolean;

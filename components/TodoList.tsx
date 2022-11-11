@@ -14,7 +14,7 @@ export function TodoList({
     listHeading,
     emptyListMessage = "No todos...",
     todoList,
-    filter,
+    filter = () => true,
 }: Props) {
     const todoListState = useObjectState(todoList);
     const todos = todoListState?.getValue()?.items.getValue() ?? [];
@@ -29,7 +29,11 @@ export function TodoList({
                 }`}
             >
                 {todos.length > 0 ? (
-                    todos.map((todo) => <TodoListItem todo={todo} todoList={todoListState} />)
+                    todos
+                        .filter(filter)
+                        .map((todo) => (
+                            <TodoListItem key={todo.id} todo={todo} todoList={todoListState} />
+                        ))
                 ) : (
                     <p className="text-gray-400 pt-2">{emptyListMessage}</p>
                 )}

@@ -9,7 +9,9 @@ import {
 import { useQuery } from "@tanstack/react-query";
 
 export function useTodoListResources() {
-    const todoListResources = useQuery(["todoListResources"], getTodoListResources);
+    const todoListResources = useQuery(["todoListResources"], getTodoListResources, {
+        cacheTime: Infinity,
+    });
 
     return todoListResources;
 }

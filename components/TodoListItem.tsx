@@ -26,7 +26,7 @@ export function TodoListItem({ todo, todoList }: Props) {
                     type="checkbox"
                     checked={todo.isCompleted}
                     className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
-                    onClick={() => {
+                    onChange={() => {
                         todoList?.getValue()?.items.setValue(
                             todos.map((todo) => {
                                 if (todo.id === id) {
@@ -36,6 +36,7 @@ export function TodoListItem({ todo, todoList }: Props) {
                                 return todo;
                             })
                         );
+                        todoList?.getValue()?.items.save();
                     }}
                 />
             </div>

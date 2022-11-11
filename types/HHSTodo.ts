@@ -1,5 +1,4 @@
 import {
-    ClassRegistry,
     HashedObject,
     MeshNode,
     MutableReference,
@@ -55,5 +54,3 @@ export class HHSTodoList extends HashedObject implements SpaceEntryPoint {
         return Promise.resolve();
     }
 }
-
-ClassRegistry.register(HHSTodoList.className, HHSTodoList);

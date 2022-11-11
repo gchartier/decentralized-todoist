@@ -5,6 +5,9 @@ import { TodoList } from "../../components/TodoList";
 import { useTodoList } from "../../hooks/useTodoList";
 import { useTodoListResources } from "../../hooks/useTodoListResources";
 import { PlusIcon as PlusIconMini } from "@heroicons/react/20/solid";
+import { TodoItem } from "../../types/Todo";
+import { HHSTodoList } from "../../types/HHSTodo";
+import { RNGImpl } from "@hyper-hyper-space/core";
 
 const TodoListPage: NextPage = () => {
     const router = useRouter();
@@ -27,21 +30,22 @@ const TodoListPage: NextPage = () => {
                             todoList={todoList}
                             listHeading="📥 Todo"
                             emptyListMessage="No tasks..."
+                            filter={(todo) => todo.isCompleted === false}
                         />
 
                         <button
-                            // onClick={async () => {
-                            //     const newTodo = { id: 123, title: "New Todo", isCompleted: false };
-                            //     const items = todoList?.getValue()?.items.getValue();
-                            //     console.log({ items });
-                            //     items?.push(newTodo);
-                            //     await todoList
-                            //         ?.getValue()
-                            //         ?.items.setValue(items as Array<TodoItem>);
-                            //     await todoListResources.store.save(
-                            //         todoList.getValue() as HHSTodoList
-                            //     );
-                            // }}
+                            onClick={async () => {
+                                const newTodo = {
+                                    id: new RNGImpl().randomHexString(128),
+                                    title: "New Todo",
+                                    isCompleted: false,
+                                };
+                                const items = todoList?.items.getValue() ?? [];
+                                console.log({ items });
+                                items?.push(newTodo);
+                                await todoList?.items.setValue(items as Array<TodoItem>);
+                                await todoListResources.store.save(todoList as HHSTodoList);
+                            }}
                             type="button"
                             className="inline-flex items-center rounded-full border border-transparent bg-indigo-600 p-1.5 text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                         >
@@ -53,6 +57,7 @@ const TodoListPage: NextPage = () => {
                             todoList={todoList}
                             listHeading="✅ Done"
                             emptyListMessage="You haven't done anything yet..."
+                            filter={(todo) => todo.isCompleted}
                         />
                     </div>
                 </div>
