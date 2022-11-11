@@ -1,4 +1,4 @@
-import { StateObject } from "@hyper-hyper-space/react";
+import { ObjectState, useObjectState } from "@hyper-hyper-space/react";
 import { HHSTodoList } from "../types/HHSTodo";
 import { TodoItem } from "../types/Todo";
 import { TodoListItem } from "./TodoListItem";
@@ -6,7 +6,7 @@ import { TodoListItem } from "./TodoListItem";
 interface Props {
     listHeading: string;
     emptyListMessage?: string;
-    todoList: StateObject<HHSTodoList>;
+    todoList?: HHSTodoList;
     filter?: (todo: TodoItem) => boolean;
 }
 
@@ -16,7 +16,8 @@ export function TodoList({
     todoList,
     filter,
 }: Props) {
-    const todos = todoList?.getValue()?.items.getValue() ?? [];
+    const todoListState = useObjectState(todoList);
+    const todos = todoListState?.getValue()?.items.getValue() ?? [];
 
     return (
         <fieldset>
@@ -28,7 +29,7 @@ export function TodoList({
                 }`}
             >
                 {todos.length > 0 ? (
-                    todos.map((todo) => <TodoListItem todo={todo} todoList={todoList} />)
+                    todos.map((todo) => <TodoListItem todo={todo} todoList={todoListState} />)
                 ) : (
                     <p className="text-gray-400 pt-2">{emptyListMessage}</p>
                 )}

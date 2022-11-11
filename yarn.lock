@@ -32,10 +32,10 @@
   dependencies:
     tslib "^2.0.0"
 
-"@hyper-hyper-space/core@^0.11.0":
-  version "0.11.0"
-  resolved "https://registry.yarnpkg.com/@hyper-hyper-space/core/-/core-0.11.0.tgz#2b3a804a8b0460fe9604ad472cfc27811dd80605"
-  integrity sha512-EUIMwnucWkXmnx0nMadxe9Q9tud/C1UKaTEi6bkmtmv6x9mpTo/O5sH6B7UzWB11vsOZxme4nqc/5WqhUQ56UA==
+"@hyper-hyper-space/core@0.11.1":
+  version "0.11.1"
+  resolved "https://registry.yarnpkg.com/@hyper-hyper-space/core/-/core-0.11.1.tgz#2e51fe5e859c28fbd6eeb8dade619382f6677e26"
+  integrity sha512-+zM+AUPIPpNDlGD5RQs0EIVCgdCMmtreEYZ08rvtBdxZZ93q2BkGd41iKygs33GMAfXYGAy16C/keY2Z2FRgqQ==
   dependencies:
     broadcast-channel "^3.5.3"
     buffer "^6.0.3"
@@ -49,10 +49,10 @@
     node-rsa "^1.1.1"
     tslib "^2.3.1"
 
-"@hyper-hyper-space/react@^0.4.0":
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/@hyper-hyper-space/react/-/react-0.4.0.tgz#c7b3317d3947a141187539eba1e53873ff73a359"
-  integrity sha512-Ozh6YTzzh0KamW1bRJOAFNOV1rs4m/oVvYzPRDDyZbQW8H8aFnAVhfr5bSytakaqdD/tuBectU7Vi7IcLgR0Mw==
+"@hyper-hyper-space/react@0.4.1":
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/@hyper-hyper-space/react/-/react-0.4.1.tgz#02a8094c1efc74f45bbb439cb55fee044af363ef"
+  integrity sha512-WzPJidfHWEi+BW8uQRLUSvDzk1qOGHnUgG79NdfOK8N3qpTQYirgsOLlVOkIKYpfL7jHGroh+H0H0PW98kv3nA==
 
 "@next/env@12.3.1":
   version "12.3.1"
