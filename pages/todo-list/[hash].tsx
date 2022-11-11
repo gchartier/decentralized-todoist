@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import { TodoList } from "../../components/TodoList";
 import { useTodoList } from "../../hooks/useTodoList";
 import { useTodoListResources } from "../../hooks/useTodoListResources";
+import { PlusIcon as PlusIconMini } from "@heroicons/react/20/solid";
 
 const TodoListPage: NextPage = () => {
     const router = useRouter();
@@ -21,27 +22,30 @@ const TodoListPage: NextPage = () => {
                 <h1 className="text-3xl font-bold pt-8">🚀 HyperHyperSpace Todo List ✅</h1>
 
                 <div className="my-6 flex max-w-4xl flex-wrap items-center justify-around sm:w-full">
-                    <div className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600">
+                    <div className="mt-6 w-96 rounded-xl border p-6 text-left space-y-4 hover:text-blue-600 focus:text-blue-600">
                         <TodoList
                             todoList={todoList}
                             listHeading="📥 Todo"
-                            emptyListMessage="You're all done! 🎉"
+                            emptyListMessage="No tasks..."
                         />
+
                         <button
-                        // onClick={async () => {
-                        //     const newTodo = { id: 123, title: "New Todo", isCompleted: false };
-                        //     const items = todoList?.getValue()?.items.getValue();
-                        //     console.log({ items });
-                        //     items?.push(newTodo);
-                        //     await todoList
-                        //         ?.getValue()
-                        //         ?.items.setValue(items as Array<TodoItem>);
-                        //     await todoListResources.store.save(
-                        //         todoList.getValue() as HHSTodoList
-                        //     );
-                        // }}
+                            // onClick={async () => {
+                            //     const newTodo = { id: 123, title: "New Todo", isCompleted: false };
+                            //     const items = todoList?.getValue()?.items.getValue();
+                            //     console.log({ items });
+                            //     items?.push(newTodo);
+                            //     await todoList
+                            //         ?.getValue()
+                            //         ?.items.setValue(items as Array<TodoItem>);
+                            //     await todoListResources.store.save(
+                            //         todoList.getValue() as HHSTodoList
+                            //     );
+                            // }}
+                            type="button"
+                            className="inline-flex items-center rounded-full border border-transparent bg-indigo-600 p-1.5 text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                         >
-                            ❤️ Add!
+                            <PlusIconMini className="h-5 w-5" aria-hidden="true" />
                         </button>
                     </div>
                     <div className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600">
