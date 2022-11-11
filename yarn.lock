@@ -32,6 +32,11 @@
   dependencies:
     tslib "^2.0.0"
 
+"@heroicons/react@^2.0.13":
+  version "2.0.13"
+  resolved "https://registry.yarnpkg.com/@heroicons/react/-/react-2.0.13.tgz#9b1cc54ff77d6625c9565efdce0054a4bcd9074c"
+  integrity sha512-iSN5XwmagrnirWlYEWNPdCDj9aRYVD/lnK3JlsC9/+fqGF80k8C7rl+1HCvBX0dBoagKqOFBs6fMhJJ1hOg1EQ==
+
 "@hyper-hyper-space/core@0.11.1":
   version "0.11.1"
   resolved "https://registry.yarnpkg.com/@hyper-hyper-space/core/-/core-0.11.1.tgz#2e51fe5e859c28fbd6eeb8dade619382f6677e26"
